@@ -9,4 +9,13 @@ servers: # specify local, dev, prod, stagging url
     description: localhost version of app
   - url: http://localhost:3000/api/v1
     description: This is just a dummy api url.
+
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    BearerAuth:
+      type: http
+      scheme: bearer
   
