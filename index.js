@@ -4,6 +4,13 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
+// swagger
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+const swaggerDocument = YAML.load('./swagger.yaml');
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 const getDate = () => format.asString('dd[MM] - hh:mm:ss', new Date());
 
 app.get('/', (req, res) => {

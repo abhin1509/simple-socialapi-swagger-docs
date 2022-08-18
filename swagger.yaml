@@ -1,0 +1,12 @@
+openapi: 3.0.0  # ref: https://swagger.io/docs/specification/basic-structure/
+info: 
+  title: Social App
+  description: Social app Backend - Abhinav
+  version: 1.0.0
+
+servers: # specify local, dev, prod, stagging url
+  - url: http://localhost:3000/api/v1
+    description: localhost version of app
+  - url: http://localhost:3000/api/v1
+    description: This is just a dummy api url.
+  
