@@ -1,0 +1,59 @@
+openapi: 3.0.0  # ref: https://swagger.io/docs/specification/basic-structure/
+info: 
+  title: Social App
+  description: Social app Backend - Abhinav
+  version: 1.0.0
+
+servers: # specify local, dev, prod, stagging url
+  - url: http://localhost:3000/api/v1
+    description: localhost version of app
+  - url: http://localhost:3000/api/v1
+    description: This is just a dummy api url.
+
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    BearerAuth:
+      type: http
+      scheme: bearer
+
+paths:
+  /instagram:
+    get:
+      summary: returns username, followers and follows
+      responses:
+        '200': # status code
+          description: returns an object
+          content:
+            application/josn:
+              schema:
+                type: object
+                properties:
+                  username:
+                    type: string
+                  followers: 
+                    type: string
+                  follows:
+                    type: string
+  
+  /{token}:
+    get:
+      summary: returns whatever is there in path parameter
+      parameters:
+        - name: token
+          default: 5 # pass any value
+          in: path # ref: pathparameter in docs
+          schema:
+            type: string
+      responses:
+        '200': # status code
+          description: returns an object
+          content:
+            application/josn:
+              schema:
+                type: object
+                properties:
+                  params:
+                    type: string

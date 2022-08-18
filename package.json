@@ -4,6 +4,7 @@
   "description": "It's a simple hardcoded social app for swagger tutorial",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +23,8 @@
     "express": "^4.18.1",
     "swagger-ui-express": "^4.5.0",
     "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }
