@@ -38,3 +38,22 @@ paths:
                   follows:
                     type: string
   
+  /{token}:
+    get:
+      summary: returns whatever is there in path parameter
+      parameters:
+        - name: token
+          default: 5 # pass any value
+          in: path # ref: pathparameter in docs
+          schema:
+            type: string
+      responses:
+        '200': # status code
+          description: returns an object
+          content:
+            application/josn:
+              schema:
+                type: object
+                properties:
+                  params:
+                    type: string
